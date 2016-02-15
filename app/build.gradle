@@ -1,8 +1,19 @@
+
+
 apply plugin: 'com.android.application'
+
+//apply plugin: 'java'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
+
+    dexOptions{
+        preDexLibraries = true
+
+    }
 
     defaultConfig {
         applicationId "com.example.chris.camerayoutube"
@@ -10,6 +21,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -20,16 +33,35 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'
-    compile 'com.amazonaws:aws-android-sdk-core:2.+'
-    compile 'com.amazonaws:aws-android-sdk-cognito:2.+'
-    compile 'com.amazonaws:aws-android-sdk-s3:2.+'
-    compile 'com.amazonaws:aws-android-sdk-ddb:2.+'
-    compile 'com.amazonaws:aws-android-sdk-sqs:2.+'
-    compile files('libs/aws-android-sdk-cognito-2.2.11.jar')
-    compile files('libs/aws-android-sdk-core-2.2.11.jar')
+    //   compile files ('libs/login-with-amazon-sdk.jar')
+    //   compile 'com.google.android.gms:play-services-location:8.3.0'
+    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.amazonaws:aws-java-sdk:1.10.52'
 
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.amazonaws:aws-android-sdk-s3:2.+'
+   /*    //    compile 'com.android.support:appcompat-v7:23.0+'
+       compile 'com.amazonaws:aws-android-sdk-core:2.2.12'
+     //  compile 'com.amazonaws:aws-android-sdk-autoscaling:2.+'
+       compile 'com.amazonaws:aws-android-sdk-cloudwatch:2.+'
+       compile 'com.amazonaws:aws-android-sdk-cognito:2.+'
+       //   compile 'com.amazonaws:aws-android-sdk-ddb:2.+'
+       // compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.+'
+      compile 'com.amazonaws:aws-android-sdk-ec2:2.+'
+       compile 'com.amazonaws:aws-android-sdk-elb:2.+'
+       compile 'com.amazonaws:aws-android-sdk-kinesis:2.+'
+      // compile 'com.amazonaws:aws-android-sdk-machinelearning:2.+'
+       compile 'com.amazonaws:aws-android-sdk-mobileanalytics:2.+'
+
+       compile 'com.amazonaws:aws-android-sdk-sdb:2.+'
+       compile 'com.amazonaws:aws-android-sdk-ses:2.+'
+       compile 'com.amazonaws:aws-android-sdk-sns:2.+'
+       compile 'com.amazonaws:aws-android-sdk-sqs:2.+'
+       // compile files('libs/aws-android-sdk-cognito-2.2.11.jar')
+       //   compile files('libs/aws-android-sdk-core-2.2.11.jar')
+       // compile files('libs/login-with-amazon-sdk.jar')*/
+    compile 'com.android.support:support-v4:23.1.1'
 }
+
+

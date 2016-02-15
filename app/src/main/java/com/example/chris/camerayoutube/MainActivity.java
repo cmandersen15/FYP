@@ -2,44 +2,23 @@ package com.example.chris.camerayoutube;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.provider.SyncStateContract;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.http.HttpClient;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.internal.Constants;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -69,13 +48,21 @@ public class MainActivity extends Activity {
                 startActivityForResult(camera_intent, CAM_REQUEST);
                 File file = getFile();
                 camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+        //        Uri path = Uri.parse("android.resource://com.example.chris.camerayoutube/" + R.drawable.sample_1);
                 // bit =(Bitmap) data.getExtras().get("data");
                 //  db.open();
                 startActivityForResult(camera_intent, CAM_REQUEST);
             }
         });
     }
-  /*  private void initUI() {
+
+    public static Uri ResourceToUri (Context context,int resID) {
+        return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" +
+                context.getResources().getResourcePackageName(resID) + '/' +
+                context.getResources().getResourceTypeName(resID) + '/' +
+                context.getResources().getResourceEntryName(resID) );
+    }
+ /*  private void initUI() {
         btnDownload = (Button) findViewById(R.id.buttonDownloadMain);
         btnUpload = (Button) findViewById(R.id.buttonUploadMain);
 
@@ -194,13 +181,7 @@ public class MainActivity extends Activity {
         builder.show();
     }
 
-    //Amazon code
-/*
 
-
-
-
-   */
 
 }
 

@@ -13,4 +13,6 @@
     <string name="cancel_all"> Cancel All</string>
     <string name="upload_file"> Upload File</string>
     <string name="upload_image"> Upload Image</string>
+    <string name="refreshing"> refreshing</string>
+    <string name="please_wait"> please_wait</string>
 </resources>

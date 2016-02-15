@@ -1,32 +1,5 @@
 package com.example.chris.camerayoutube;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
-
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.http.HttpClient;
-import com.amazonaws.http.HttpResponse;
-import com.amazonaws.mobileconnectors.cognito.CognitoSyncManager;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
-import com.amazonaws.regions.Region;
-import com.amazonaws.regions.Regions;
-import com.amazonaws.services.cognitosync.model.Dataset;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.Bucket;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.List;
-
 /**
  * Created by Chris on 29/01/2016.
  */

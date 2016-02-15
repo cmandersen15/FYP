@@ -1,11 +1,12 @@
 package com.example.chris.camerayoutube;
-import java.util.List;
-import java.util.Random;
 
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+
+import java.util.List;
+import java.util.Random;
 
 public class TestDatabaseActivity extends ListActivity {
     private CommentsDataSource datasource;

@@ -1,15 +1,11 @@
 package com.example.chris.camerayoutube;
+
 import android.content.ContentValues;
-import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.provider.BaseColumns;
 import android.util.Log;
-
-import java.io.ByteArrayOutputStream;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -17,7 +13,8 @@ public class Database extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_IMAGE = "image";
     public static final String COLUMN_DETAILS = "details";
-
+    public static final String COLUMN_COMMENT = "COMMENT";
+    public static final String TABLE_COMMENTS = "COMMENT";
     private static final String DATABASE_NAME = "image_details";
     private static final int DATABASE_VERSION = 1;
 
